@@ -1,5 +1,6 @@
 package NoorProject.EduWaveSafeAndSecurity.GeneralDirectorOfSchoolSecurityAndSafety.EduWaveSafeAndSecurityForms.SectionsForm;
 
+import NoorProject.Other.NoorLogin;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -23,10 +24,6 @@ public class SectionsForms {
     private By FormStatusSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By SerachButtonLocator = By.id("ctl00_PlaceHolderMain_ibtnSearch");
     private By SectionsLinkLocator = By.id("ctl00_PlaceHolderMain_gvForms_ctl02_tdSections");
-
-
-    Random Rand = new Random();
-    int RandomNumber = Rand.nextInt(1000000);
 
 
     //مدير عام الامن والسلامة/ أضافة الاقسام
@@ -98,6 +95,8 @@ public class SectionsForms {
 
             By SectionDescrptionSplit = By.id("ctl00_PlaceHolderMain_gvSections_ctl" + TableSizeAddFormat + "_tbAddFormSectionDesc");
 
+            Random Rand = new Random();
+            int RandomNumber = Rand.nextInt(1000000);
 
             WebElement SectionDescrptionWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescrptionSplit));
 
@@ -148,7 +147,6 @@ public class SectionsForms {
             Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم عملية اضافة القسم بنجاح");
         }
 
-        System.out.println(RandomNumber);
 
     }
 
@@ -183,13 +181,13 @@ public class SectionsForms {
     }
 
 
+    private By EditLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnEdit");
+    private By SaveLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnUpdate");
 
     //مدير عام الامن والسلامة/ تعديل الاقسام الاقسام
     @Test
     public void editSectionsOfTheForm() throws InterruptedException {
 
-        By EditLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnEdit");
-        By SaveLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnUpdate");
 
         WebElement FormMainMenuLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor));
         FormMainMenuLoactorWait.click();
@@ -209,8 +207,32 @@ public class SectionsForms {
         WebElement SectionsLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator));
         SectionsLinkLocatorWait.click();
 
+    /*    System.out.println("Rami" + RandomNumber);
+
+        WebElement table = browserQA.findElement(By.id("ctl00_PlaceHolderMain_gvSections"));
+
+        List<WebElement> allrows = table.findElements(By.tagName("tr"));
+
+        for (WebElement row : allrows) {
+            List<WebElement> Cells = row.findElements(By.tagName("td"));
+            for (WebElement Cell : Cells) {
+                if (Cell.getText().contains("Rami" + RandomNumber))
+                    System.out.println(Cell.getText());
+
+            }
+
+        }
+*/
         WebElement EditLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(EditLinkLocator));
         EditLinkLocatorWait.click();
+
+        By SectionDescLoactor = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_tbFormSectionDesc");
+        Random Rand = new Random();
+        int RandomNumber = Rand.nextInt(1000000);
+
+        WebElement SectionDescLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescLoactor));
+        SectionDescLoactorWait.clear();
+        SectionDescLoactorWait.sendKeys("Rami" + RandomNumber);
 
 
         WebElement SaveLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SaveLinkLocator));
@@ -272,3 +294,4 @@ public class SectionsForms {
     }
 
 }
+
