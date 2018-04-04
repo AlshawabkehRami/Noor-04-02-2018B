@@ -52,6 +52,9 @@ public class SectionsForms {
         WebElement SectionsLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator));
         SectionsLinkLocatorWait.click();
 
+
+
+
         List SectionTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
 
         int TableSize = SectionTableList.size();
