@@ -29,6 +29,8 @@
         <suite-file path="QA/SafetyAndSecurity/SchoolSecurityAndSafetyInSchool/Forms.xml"/>
         <suite-file
                 path="QA/SafetyAndSecurity/GeneralDirectorOfSchoolSecurityAndSafety/Forms/FormSections/FormSections.xml"/>
+        <suite-file
+                path="QA/SafetyAndSecurity/GeneralDirectorOfSchoolSecurityAndSafety/Forms/FormSections/ExternalItems.xml"/>
 
 
     </suite-files>
