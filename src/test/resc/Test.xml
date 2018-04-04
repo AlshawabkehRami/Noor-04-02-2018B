@@ -20,9 +20,7 @@
             <class name="NoorProject.EduWaveSafeAndSecurity.GeneralDirectorOfSchoolSecurityAndSafety.EduWaveSafeAndSecurityForms.SectionsForm.SectionsForms">
                 <methods>
                     <include name="addSectionsToTheForm"/>
-                    <include name="ViewSectionsOfTheForms"/>
-                    <include name="editSectionsOfTheForm"/>
-                    <include name="deleteSections"/>
+
                 </methods>
             </class>
         </classes>

@@ -25,6 +25,10 @@ public class SectionsForms {
     private By SectionsLinkLocator = By.id("ctl00_PlaceHolderMain_gvForms_ctl02_tdSections");
 
 
+    Random Rand = new Random();
+    int RandomNumber = Rand.nextInt(1000000);
+
+
     //مدير عام الامن والسلامة/ أضافة الاقسام
     @Test
     public void addSectionsToTheForm() throws InterruptedException {
@@ -93,8 +97,7 @@ public class SectionsForms {
             System.out.println("TableSizeAddFormat::" + TableSizeAddFormat);
 
             By SectionDescrptionSplit = By.id("ctl00_PlaceHolderMain_gvSections_ctl" + TableSizeAddFormat + "_tbAddFormSectionDesc");
-            Random Rand = new Random();
-            int RandomNumber = Rand.nextInt(1000000);
+
 
             WebElement SectionDescrptionWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionDescrptionSplit));
 
@@ -145,6 +148,8 @@ public class SectionsForms {
             Assert.assertEquals(ActualResult , ExcpectedResult , "لم تتم عملية اضافة القسم بنجاح");
         }
 
+        System.out.println(RandomNumber);
+
     }
 
     private By BTNBack = By.id("ctl00_PlaceHolderMain_ibtnBack");
@@ -177,12 +182,14 @@ public class SectionsForms {
 
     }
 
-    private By EditLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnEdit");
-    private By SaveLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnUpdate");
+
 
     //مدير عام الامن والسلامة/ تعديل الاقسام الاقسام
     @Test
     public void editSectionsOfTheForm() throws InterruptedException {
+
+        By EditLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnEdit");
+        By SaveLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnUpdate");
 
         WebElement FormMainMenuLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor));
         FormMainMenuLoactorWait.click();
@@ -220,8 +227,10 @@ public class SectionsForms {
 
 
     }
+
     private By DeleteLinkLocator = By.id("ctl00_PlaceHolderMain_gvSections_ctl02_lbtnDelete");
     private By YesConfrmationLocator = By.id("ctl00_ibtnYes");
+
     //مدير عام الامن والسلامة حذف الاقسام
     @Test
 
@@ -258,7 +267,6 @@ public class SectionsForms {
         String ExpectedResult = "تم حذف القسم بنجاح.";
 
         Assert.assertEquals(ActualResult , ExpectedResult , "لايمكن الحذف للقسم");
-
 
 
     }
