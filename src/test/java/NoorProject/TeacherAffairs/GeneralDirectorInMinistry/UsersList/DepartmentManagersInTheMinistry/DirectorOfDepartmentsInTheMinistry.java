@@ -4,14 +4,19 @@
 
 package NoorProject.TeacherAffairs.GeneralDirectorInMinistry.UsersList.DepartmentManagersInTheMinistry;
 
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import static NoorProject.Other.NoorLogin.browserQA;
 import static NoorProject.Other.NoorLogin.waitQA;
@@ -87,6 +92,14 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By btnSaveLocator = By.id("ctl00_PlaceHolderMain_ibtnSave");
 
 
+
+
+
+
+
+
+    public static Random Rand = new Random();
+    public static int RandomNumberG = Rand.nextInt(1000000);
     @Test
     //أضافة مدير القسم بالوزارة
     public void AddDirectorOfDepartmentsInTheMinistry() throws InterruptedException {
@@ -105,9 +118,8 @@ public class DirectorOfDepartmentsInTheMinistry {
         AddedNewUserLinkLocatorWait.click();
 
         WebElement UserIdFieldLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserIdFieldLocator));
-        Random Rand = new Random();
-        int RandomNumber = Rand.nextInt(1000000);
-        UserIdFieldLocatorWait.sendKeys("1" + RandomNumber);
+
+        UserIdFieldLocatorWait.sendKeys("1" + RandomNumberG);
 
         WebElement IbtnCheckIdentificationIDLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator));
         IbtnCheckIdentificationIDLocatorWait.click();
@@ -124,7 +136,7 @@ public class DirectorOfDepartmentsInTheMinistry {
 
         Thread.sleep(1000);
         WebElement PassportNumberLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(PassportNumberLocator));
-        PassportNumberLocatorWait.sendKeys("1" + RandomNumber);
+        PassportNumberLocatorWait.sendKeys("1" + RandomNumberG);
 
 
         WebElement CLRIdentificationDateLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRIdentificationDateLocator));
@@ -190,7 +202,7 @@ public class DirectorOfDepartmentsInTheMinistry {
 
         browserQA.findElement(UserAuthenticationUCLocatr).clear();
         //browserQA.findElement(UserAuthenticationUCLocatr).sendKeys("rami005");
-        browserQA.findElement(UserAuthenticationUCLocatr).sendKeys("Rami" + RandomNumber);
+        browserQA.findElement(UserAuthenticationUCLocatr).sendKeys("Rami" + RandomNumberG);
 
 
         browserQA.findElement(UserAuthenticationUC_ibtnGoLocator).click();
@@ -231,12 +243,12 @@ public class DirectorOfDepartmentsInTheMinistry {
         browserQA.findElement(TelephoneNo1Locator).sendKeys("4546545646");
         browserQA.findElement(TelephoneNo2LOcator).sendKeys("3546546545");
         browserQA.findElement(AdmissionMobileNoLOcator).sendKeys("599999999");
-        browserQA.findElement(EmailAddressLocator).sendKeys("www.Rami" + RandomNumber + "@gmail.com");
-        browserQA.findElement(StreetAddressLocator).sendKeys("7" + RandomNumber);
-        browserQA.findElement(AddressInVacationLocator).sendKeys("7" + RandomNumber);
-        browserQA.findElement(ZipCodeLocator).sendKeys("7" + RandomNumber);
-        browserQA.findElement(POBoxLocator).sendKeys("7" + RandomNumber);
-        browserQA.findElement(FaxNumber).sendKeys("7" + RandomNumber);
+        browserQA.findElement(EmailAddressLocator).sendKeys("www.Rami" + RandomNumberG + "@gmail.com");
+        browserQA.findElement(StreetAddressLocator).sendKeys("7" + RandomNumberG);
+        browserQA.findElement(AddressInVacationLocator).sendKeys("7" + RandomNumberG);
+        browserQA.findElement(ZipCodeLocator).sendKeys("7" + RandomNumberG);
+        browserQA.findElement(POBoxLocator).sendKeys("7" + RandomNumberG);
+        browserQA.findElement(FaxNumber).sendKeys("7" + RandomNumberG);
         browserQA.findElement(btnSaveLocator).click();
 
         By DDlJobTitleLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserProfile_ddlJobTitle-container");
@@ -268,5 +280,7 @@ public class DirectorOfDepartmentsInTheMinistry {
 
             Assert.fail("يجب اضافة اقسام للفئات التشكيلية");
         }
+        browserQA.close();
     }
+
 }

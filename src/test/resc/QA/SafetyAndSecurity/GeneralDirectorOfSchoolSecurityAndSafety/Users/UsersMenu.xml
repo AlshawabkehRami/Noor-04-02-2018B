@@ -13,7 +13,7 @@
 
 <suite name="مسؤول الامن والسلامة قي المدرسة">
 
-    <test name="أنواع الزيارات/اضافة/تعديل\حذف">
+    <test name="اضافة المستخدمين">
 
         <classes>
             <class name="NoorProject.Other.NoorLogin">
@@ -25,10 +25,14 @@
                 <methods>
                     <include name="loginAndSwitchPrfileUsers"/>
                     <include name="addGeneralDirectorOfSchoolSecurityAndSafetyOfficer"/>
+<!--
                     <include name="addSchoolSecurityAndSafetyOfficer"/>
+-->
                 </methods>
             </class>
+<!--
             <class name="NoorProject.Other.NoorLogOut"/>
+-->
         </classes>
 
     </test>
