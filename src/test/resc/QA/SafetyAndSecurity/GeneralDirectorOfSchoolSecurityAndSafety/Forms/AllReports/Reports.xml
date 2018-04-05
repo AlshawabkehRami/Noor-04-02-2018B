@@ -19,6 +19,11 @@
                 <methods>
                     <include name="ViewDistributeStudentsToClassesReport"/>
                     <include name="BuildingInformationReport"/>
+                    <include name="SecurityAndSafety_InputRatioReport"/>
+                    <include name="SecurityAndSafety_AssessmentRateReport"/>
+                    <include name="InfoSchoolReport"/>
+                    <include name="SchoolDataWithEducationalStagesReport"/>
+                    <include name="UserDataInTheSchoolsReports"/>
 
                 </methods>
             </class>
