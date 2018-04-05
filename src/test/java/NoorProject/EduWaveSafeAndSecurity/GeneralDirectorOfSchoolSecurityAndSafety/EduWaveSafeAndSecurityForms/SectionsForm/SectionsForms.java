@@ -26,15 +26,23 @@ public class SectionsForms {
     private By SectionsLinkLocator = By.id("ctl00_PlaceHolderMain_gvForms_ctl02_tdSections");
 
 
-    //مدير عام الامن والسلامة/ أضافة الاقسام
     @Test
-    public void addSectionsToTheForm() throws InterruptedException {
+
+    public void LoginUserAndSwitchProfileAdmin() {
 
         WebElement SwitchProfileLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SwitchProfileLocator));
         SwitchProfileLocatorWait.click();
 
         WebElement UserLabelLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserNameLabelLocator));
         UserLabelLocatorWait.click();
+
+
+    }
+
+
+    //مدير عام الامن والسلامة/ أضافة الاقسام
+    @Test
+    public void addSectionsToTheForm() throws InterruptedException {
 
         WebElement FormMainMenuLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(FormMainMenuLoactor));
         FormMainMenuLoactorWait.click();
@@ -51,8 +59,6 @@ public class SectionsForms {
 
         WebElement SectionsLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SectionsLinkLocator));
         SectionsLinkLocatorWait.click();
-
-
 
 
         List SectionTableList = browserQA.findElements(By.xpath("/html/body/form/div[7]/div[2]/div[2]/div/div/div[1]/div[2]/div/div/table[1]/tbody/tr/td[1]"));
