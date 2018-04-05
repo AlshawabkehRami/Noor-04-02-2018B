@@ -390,7 +390,7 @@ public class AllReports {
         WebElement GenderSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderSearchLocatorSDWES));
         GenderSearchLocatorWait.sendKeys("بنين" , Keys.ENTER);
 
-
+        Thread.sleep(2000);
         WebElement DDLDistrictLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictLocatorSDWES));
         DDLDistrictLocatorWait.click();
 
