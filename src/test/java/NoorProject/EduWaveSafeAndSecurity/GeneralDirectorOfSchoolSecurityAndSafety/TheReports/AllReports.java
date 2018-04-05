@@ -390,13 +390,10 @@ public class AllReports {
         WebElement GenderSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(GenderSearchLocatorSDWES));
         GenderSearchLocatorWait.sendKeys("بنين" , Keys.ENTER);
 
-        try {
-            WebElement DDLDistrictLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictLocatorSDWES));
-            DDLDistrictLocatorWait.click();
-        } catch (Exception e) {
-            WebElement DDLDistrictLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictLocatorSDWES));
-            DDLDistrictLocatorWait.click();
-        }
+
+        WebElement DDLDistrictLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDLDistrictLocatorSDWES));
+        DDLDistrictLocatorWait.click();
+
 
         WebElement DistrictSearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DistrictSearchLocatorSDWES));
         DistrictSearchLocatorWait.sendKeys("الحد الغربي" , Keys.ENTER);
