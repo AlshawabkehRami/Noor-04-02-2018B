@@ -6,7 +6,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 
-<suite name="مدير عام الامن والسلامة">
+<suite name="مدير عام الامن والسلامة المدرسية">
 
     <test name="مدير عام الامن والسلامة/الاقسام\اضافة\عرض\تعديل\حذف">
         <classes>
