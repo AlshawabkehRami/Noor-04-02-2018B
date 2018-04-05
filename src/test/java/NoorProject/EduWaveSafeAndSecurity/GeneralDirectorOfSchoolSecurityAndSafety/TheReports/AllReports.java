@@ -431,6 +431,7 @@ public class AllReports {
     public void UserDataInTheSchoolsReports() throws InterruptedException {
 
 
+        Thread.sleep(1000);
         WebElement ReportsMainMenuLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
         ReportsMainMenuLocatorWait.click();
 
