@@ -24,9 +24,10 @@
                     <include name="InfoSchoolReport"/>
                     <include name="SchoolDataWithEducationalStagesReport"/>
                     <include name="UserDataInTheSchoolsReports"/>
-
+                    <include name="StudentsWithOwnershipOfTheSchoolBuildingReport"/>
                 </methods>
             </class>
+            <class name="NoorProject.Other.NoorLogOut"/>
 
         </classes>
     </test>
