@@ -10,21 +10,23 @@
 
 <suite name="مسؤول الامن والسلامة قي المدرسة">
 
-    <test name="مدير عام الامن والسلامة المدرسية\البنود الخارجية\اضافة">
+    <test name="أنواع الزيارات/اضافة/تعديل\حذف">
+
         <classes>
             <class name="NoorProject.Other.NoorLogin">
                 <methods>
                     <include name="GeneralDirectorOfSchoolSecurityAndSafety"/>
                 </methods>
             </class>
-            <class name="NoorProject.EduWaveSafeAndSecurity.GeneralDirectorOfSchoolSecurityAndSafety.EduWaveSafeAndSecurityForms.ExternalItems.ExternalItems">
+            <class name="NoorProject.EduWaveSafeAndSecurity.GeneralDirectorOfSchoolSecurityAndSafety.Settings.VisitsTypes">
                 <methods>
-                    <include name="addExternalItems"/>
+                    <include name="addVisitsTypes"/>
 
                 </methods>
             </class>
-
+            <class name="NoorProject.Other.NoorLogOut"/>
         </classes>
+
     </test>
 
 
