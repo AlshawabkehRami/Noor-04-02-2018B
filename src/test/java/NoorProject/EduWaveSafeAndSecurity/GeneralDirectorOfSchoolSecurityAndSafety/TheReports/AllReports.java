@@ -247,7 +247,8 @@ public class AllReports {
         WebElement ReportsMainMenuLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
         ReportsMainMenuLocatorWait.click();
 
-        browserQA.findElement(SearchLinkLocator).click();
+        WebElement SearchLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchLinkLocator));
+        SearchLinkLocatorWait.click();
 
         WebElement TheReportNameLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AssessmentRateReportLocator));
         TheReportNameLocatorWait.click();
@@ -304,10 +305,11 @@ public class AllReports {
     public void InfoSchoolReport() {
 
 
-        WebElement reports_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
-        reports_LocatorWait.click();
+        WebElement ReportsMainMenuLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
+        ReportsMainMenuLocatorWait.click();
 
-        browserQA.findElement(SearchLinkLocator).click();
+        WebElement SearchLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchLinkLocator));
+        SearchLinkLocatorWait.click();
 
         WebElement schools_info_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchoolInfoReportLocator));
         schools_info_LocatorWait.click();
@@ -376,10 +378,11 @@ public class AllReports {
     public void SchoolDataWithEducationalStagesReport() throws InterruptedException {
 
 
-        WebElement reports_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
-        reports_LocatorWait.click();
+        WebElement ReportsMainMenuLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
+        ReportsMainMenuLocatorWait.click();
 
-        browserQA.findElement(SearchLinkLocator).click();
+        WebElement SearchLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchLinkLocator));
+        SearchLinkLocatorWait.click();
 
         WebElement TheReportNameLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SchoolDataWithEducationalStagesLocator));
         TheReportNameLocatorWait.click();
@@ -428,10 +431,13 @@ public class AllReports {
     public void UserDataInTheSchoolsReports() throws InterruptedException {
 
 
-        WebElement reports_LocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
-        reports_LocatorWait.click();
+        WebElement ReportsMainMenuLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
+        ReportsMainMenuLocatorWait.click();
 
-        browserQA.findElement(SearchLinkLocator).click();
+        WebElement SearchLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchLinkLocator));
+        SearchLinkLocatorWait.click();
+
+
         WebElement TheReportLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserDataInTheSchoolsLocator));
         TheReportLoactorWait.click();
 
@@ -464,9 +470,11 @@ public class AllReports {
     public void StudentsWithOwnershipOfTheSchoolBuildingReport() throws InterruptedException {
 
 
-        browserQA.findElement(ReportsMainMenuLocator).click();
+        WebElement ReportsMainMenuLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(ReportsMainMenuLocator));
+        ReportsMainMenuLocatorWait.click();
 
-        browserQA.findElement(SearchLinkLocator).click();
+        WebElement SearchLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(SearchLinkLocator));
+        SearchLinkLocatorWait.click();
 
         WebElement TheRwportLoactorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(StudentsWithOwnershipOfTheSchoolBuilding));
         TheRwportLoactorWait.click();
