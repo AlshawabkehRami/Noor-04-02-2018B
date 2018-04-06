@@ -4,24 +4,24 @@
 
 package NoorProject.TeacherAffairs.GeneralDirectorInMinistry.UsersList.DepartmentManagersInTheMinistry;
 
-import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.reporters.jq.Main;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
+import java.util.Scanner;
 
 import static NoorProject.Other.NoorLogin.browserQA;
 import static NoorProject.Other.NoorLogin.waitQA;
 
 public class DirectorOfDepartmentsInTheMinistry {
+
 
     private By UsersMenuLocator = By.id("divMenuItem_4720");
     private By MyInputLocator = By.id("myInput");
@@ -32,13 +32,10 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By DDlNationalityLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlNationality-container");
     private By DDlNationalitySearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By PassportNumberLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbPassportNumber");
-
     private By CLRIdentificationDateLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_clrIdentificationDate_ibtnOpenCalendar");
     private By CLRIdentificationDayLocator = By.xpath("/html/body/div/table/tbody/tr[3]/td[3]");
-
     private By CLRResidenceDateLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_clrResidenceDate_ibtnOpenCalendar");
     private By CLRResidenceDayLocator = By.xpath("/html/body/div/table/tbody/tr[1]/td[7]");
-
     private By DdlIdentificationPlaceLocator = By.id("select2-ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_ddlIdentificationPlace-container");
     private By DdlIdentificationPlaceSearchLocator = By.xpath("/html/body/span/span/span[1]/input");
     private By ArabicFirstNameLocator = By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_tbArabicFirstName");
@@ -92,16 +89,11 @@ public class DirectorOfDepartmentsInTheMinistry {
     private By btnSaveLocator = By.id("ctl00_PlaceHolderMain_ibtnSave");
 
 
+    Random Rand = new Random();
+    int RandomNumberG = Rand.nextInt(1000000);
 
-
-
-
-
-
-    public static Random Rand = new Random();
-    public static int RandomNumberG = Rand.nextInt(1000000);
-    @Test
     //أضافة مدير القسم بالوزارة
+    @Test
     public void AddDirectorOfDepartmentsInTheMinistry() throws InterruptedException {
 
 
@@ -117,9 +109,11 @@ public class DirectorOfDepartmentsInTheMinistry {
         WebElement AddedNewUserLinkLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddedNewUserLinkLocator));
         AddedNewUserLinkLocatorWait.click();
 
+
         WebElement UserIdFieldLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserIdFieldLocator));
 
         UserIdFieldLocatorWait.sendKeys("1" + RandomNumberG);
+
 
         WebElement IbtnCheckIdentificationIDLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator));
         IbtnCheckIdentificationIDLocatorWait.click();
@@ -134,11 +128,26 @@ public class DirectorOfDepartmentsInTheMinistry {
         WebElement DDlNationalitySearchLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DDlNationalitySearchLocator));
         DDlNationalitySearchLocatorWait.sendKeys("أسبانيا" , Keys.ENTER);
 
+
         Thread.sleep(1000);
+
         WebElement PassportNumberLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(PassportNumberLocator));
         PassportNumberLocatorWait.sendKeys("1" + RandomNumberG);
+    }
+
+    public static String UserIdToPassString = null;
+
+    @Test
+    public void UserId() throws InterruptedException {
+
+        Thread.sleep(2000);
+        UserIdToPassString = browserQA.findElement(By.id("ctl00_PlaceHolderMain_TabContainerMain_tabUserAuthentication_oUserAuthenticationUC_lblIdentificationNumber")).getText();
 
 
+    }
+
+    @Test
+    public void tttgggg() throws InterruptedException {
         WebElement CLRIdentificationDateLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRIdentificationDateLocator));
         CLRIdentificationDateLocatorWait.click();
         WebElement CLRIdentificationDayLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(CLRIdentificationDayLocator));
@@ -153,7 +162,6 @@ public class DirectorOfDepartmentsInTheMinistry {
 
         WebElement DdlIdentificationPlaceLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(DdlIdentificationPlaceLocator));
         DdlIdentificationPlaceLocatorWait.click();
-
 
 
         browserQA.findElement(DdlIdentificationPlaceSearchLocator).sendKeys("الشمال" , Keys.ENTER);
@@ -280,7 +288,8 @@ public class DirectorOfDepartmentsInTheMinistry {
 
             Assert.fail("يجب اضافة اقسام للفئات التشكيلية");
         }
-        browserQA.close();
+
     }
+
 
 }

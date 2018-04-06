@@ -4,6 +4,9 @@
 
 package NoorProject.EduWaveSafeAndSecurity.GeneralDirectorOfSchoolSecurityAndSafety.Users;
 
+import NoorProject.Other.NoorLogin;
+import NoorProject.TeacherAffairs.GeneralDirectorInMinistry.UsersList.DepartmentManagersInTheMinistry.DirectorOfDepartmentsInTheMinistry;
+import org.omg.PortableServer.THREAD_POLICY_ID;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,10 +17,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Random;
 
 import static NoorProject.Other.NoorLogin.browserQA;
 import static NoorProject.Other.NoorLogin.waitQA;
+import static NoorProject.TeacherAffairs.GeneralDirectorInMinistry.UsersList.DepartmentManagersInTheMinistry.DirectorOfDepartmentsInTheMinistry.UserIdToPassString;
 
 public class AllUsers {
 
@@ -98,7 +105,7 @@ public class AllUsers {
 
     //موظفو صلاحيات مدير عام الأمن والسلامة المدرسية
     @Test
-    public void addGeneralDirectorOfSchoolSecurityAndSafetyOfficer() throws InterruptedException {
+    public void addGeneralDirectorOfSchoolSecurityAndSafetyOfficer() throws InterruptedException, AWTException {
 
 
         WebElement UsersTypeMenuLocatorWait = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UsersTypeMenuLocator));
@@ -252,7 +259,47 @@ public class AllUsers {
         String Excpectesresult = "لا يمكن اضافة ملف لعدم وجود ملف له في شؤون المعلمين";
 
         if (ActualResult.equals(Excpectesresult)) {
-            WebDriver B;
+
+            browserQA.close();
+
+            NoorLogin Login = new NoorLogin();
+            Login.DirectorGeneralofTeachersAffairsintheMinistry();
+
+            DirectorOfDepartmentsInTheMinistry Add = new DirectorOfDepartmentsInTheMinistry();
+            Add.AddDirectorOfDepartmentsInTheMinistry();
+
+            DirectorOfDepartmentsInTheMinistry CallClass = new DirectorOfDepartmentsInTheMinistry();
+            CallClass.UserId();
+            System.out.println(UserIdToPassString);
+            String RamiId = UserIdToPassString;
+            DirectorOfDepartmentsInTheMinistry Add2 = new DirectorOfDepartmentsInTheMinistry();
+            Add2.tttgggg();
+
+
+            NoorLogin Login2=new NoorLogin();
+            Login2.GeneralDirectorOfSchoolSecurityAndSafety();
+
+            AllUsers LoginAndSitch=new AllUsers();
+            LoginAndSitch.loginAndSwitchPrfileUsers();
+
+            Thread.sleep(1000);
+            UsersTypeMenuLocatorWait.click();
+
+            ReportLinkLocatorWait.click();
+
+            AddedNewUserLinkLocatorWait.click();
+
+
+            UserIdFieldLocatorWait.sendKeys(RamiId);
+
+            IbtnCheckIdentificationIDLocatorWait.click();
+
+
+
+
+
+
+       /*     WebDriver B;
             WebDriverWait W;
             String U = "https://10.0.1.195/EduWaveNewDesign/Login.aspx";
             By LOGIN = By.xpath("/html/body/form/div[3]/div[1]/div/div[1]/div[2]/label[1]");
@@ -281,8 +328,7 @@ public class AllUsers {
             B.findElement(AddedNewUserLinkLocator).click();
             B.findElement(UserIdFieldLocator).sendKeys(ID);
             B.findElement(IbtnCheckIdentificationIDLocator).click();
-            B.findElement(By.id("ctl00_PlaceHolderMain_ibtnSave")).click();
-
+            B.findElement(By.id("ctl00_PlaceHolderMain_ibtnSave")).click();*/
 
 
         } else {
