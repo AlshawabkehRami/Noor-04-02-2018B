@@ -282,18 +282,33 @@ public class AllUsers {
             AllUsers LoginAndSitch=new AllUsers();
             LoginAndSitch.loginAndSwitchPrfileUsers();
 
-            Thread.sleep(1000);
-            UsersTypeMenuLocatorWait.click();
 
-            ReportLinkLocatorWait.click();
+            WebElement UsersTypeMenuLocatorWait1 = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UsersTypeMenuLocator));
+            UsersTypeMenuLocatorWait1.click();
 
-            AddedNewUserLinkLocatorWait.click();
+            WebElement ReportLinkLocatorWait1 = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserLinkLocator1));
+            ReportLinkLocatorWait1.click();
 
+            WebElement AddedNewUserLinkLocatorWait1 = waitQA.until(ExpectedConditions.visibilityOfElementLocated(AddedNewUserLinkLocator));
+            AddedNewUserLinkLocatorWait1.click();
 
-            UserIdFieldLocatorWait.sendKeys(RamiId);
+            WebElement UserIdFieldLocatorWait1 = waitQA.until(ExpectedConditions.visibilityOfElementLocated(UserIdFieldLocator));
 
-            IbtnCheckIdentificationIDLocatorWait.click();
+            UserIdFieldLocatorWait1.sendKeys(RamiId);
 
+            WebElement IbtnCheckIdentificationIDLocatorWait1 = waitQA.until(ExpectedConditions.visibilityOfElementLocated(IbtnCheckIdentificationIDLocator));
+            IbtnCheckIdentificationIDLocatorWait1.click();
+
+            browserQA.findElement(By.id("ctl00_PlaceHolderMain_ibtnSave")).click();
+
+            By ValidationMeassage=By.id("ctl00_PlaceHolderMain_lblResult");
+
+            WebElement ValidationMeassageWait=waitQA.until(ExpectedConditions.visibilityOfElementLocated(ValidationMeassage));
+
+            String ActualResult2=browserQA.findElement(ValidationMeassage).getText();
+            String ExpectedResult2="تمت عملية الحفظ بنجاح.";
+
+            Assert.assertEquals(ActualResult2,ExpectedResult2,"يوجد مشكلة");
 
 
 

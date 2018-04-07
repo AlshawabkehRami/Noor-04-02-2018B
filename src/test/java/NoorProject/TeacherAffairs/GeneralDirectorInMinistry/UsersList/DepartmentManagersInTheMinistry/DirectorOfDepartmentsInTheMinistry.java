@@ -288,7 +288,7 @@ public class DirectorOfDepartmentsInTheMinistry {
 
             Assert.fail("يجب اضافة اقسام للفئات التشكيلية");
         }
-
+        browserQA.close();
     }
 
 
